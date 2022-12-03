@@ -1,0 +1,78 @@
+@font-face {
+    font-family: Pacifico;
+    src: url('/font-text/Pacifico-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 
+      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.heading {
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+.heading h1 {
+    color: white;
+    font-size: 60px;
+    text-shadow: 1px 1px 2px white, 0 0 1em blue, 0 0 0.2em blue;
+    font-style: italic;
+    font-family: Pacifico;
+}
+.heading h3 {
+    color: wheat;
+    font-size: 20px;
+}
+
+#clickme{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.box {
+    width: 15%;
+    height: 150px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgb(251, 252, 252) 0px 20px 30px -10px;
+    font-family: Pacifico;
+    
+}
+
+.number-count-down {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+audio {
+    visibility: hidden;
+}
+
+#particles-js {
+    background: black;
+    height: 100vh;
+}
+
+@media only  screen and (min-width:0px) and (max-width:576px) {
+    .heading h1 {
+        font-size: 30px;
+    }
+
+    #clickme {
+        flex-wrap: wrap;
+    }
+
+    .box{
+        width: 35%;
+    }
+}
