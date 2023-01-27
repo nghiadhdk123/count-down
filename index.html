@@ -5,24 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <title>Document</title>
-    <link rel="shortcut icon" href="#">
+    <title>Đếm ngược các ngày</title>
+    <link rel="shortcut icon" href="/public/icon.png">
     <link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div id="particles-js">
 		<div class="heading">
 			<h1>Đếm ngược tết 2023</h1>
-			<div id="clickme">
-				<div class="box"><span id="days" class="number-count-down">50</span> Ngày</div>
-                <div class="box"><span id="hours" class="number-count-down">50</span> Tiếng</div>
-                <div class="box"><span id="minutes" class="number-count-down">50</span> Phút</div>
-                <div class="box"><span id="seconds" class="number-count-down">50</span> Giây</div>
-			</div>
+            <div id="wrapper">
+                <div id="clickme">
+                    <div class="box"><span id="days" class="number-count-down"></span> Ngày</div>
+                    <div class="box"><span id="hours" class="number-count-down"></span> Tiếng</div>
+                    <div class="box"><span id="minutes" class="number-count-down"></span> Phút</div>
+                    <div class="box"><span id="seconds" class="number-count-down"></span> Giây</div>
+                </div>
+                <div id="selectpicker">
+                    <select id="selectDay">
+                        <option value="Chọn ngày lễ" disabled selected>Chọn ngày lễ</option>
+                        <option value="2/10">Tết nguyên đán</option>
+                        <option value="2/14">Lễ tình nhân</option>
+                        <option value="1/1">Tết dương lịch</option>
+                        <option value="12/25">Lễ giáng sinh</option>
+                        <option value="9/2">Lễ quốc khánh</option>
+                        <option value="10/20">Quốc tế phụ nữ</option>
+                        <option value="5/1">Quốc tế lao động</option>
+                        <option value="11/20">Ngày nhà giáo Việt Nam</option>
+                        <option value="9/29">Tết trung thu</option>
+                      </select>
+                      
+                </div>
+            </div>
 		</div>
 	</div>
 
 	<!-- Import Particles.js and app.js files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="particles.js-master/particles.js">
 	</script>
 	<script src="/particles.js-master/demo/js/app.js">

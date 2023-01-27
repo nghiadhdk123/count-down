@@ -9,6 +9,12 @@ body {
       'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
       'Open Sans', 'Helvetica Neue', sans-serif;
 }
+#wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .heading {
     position: absolute;
     text-align: center;
@@ -54,8 +60,17 @@ body {
     font-weight: bold;
 }
 
-audio {
-    visibility: hidden;
+#selectpicker {
+    margin-top: 5%;
+}
+
+select {
+    height: 40px;
+    border-radius: 15px;
+}
+
+select option {
+    font-family: Pacifico;
 }
 
 #particles-js {
@@ -64,15 +79,28 @@ audio {
 }
 
 @media only  screen and (min-width:0px) and (max-width:576px) {
+    #wrapper {
+        flex-direction: column-reverse;
+    }
+
+    #selectpicker {
+        margin-bottom: 5%;
+    }
+
     .heading h1 {
         font-size: 30px;
     }
 
     #clickme {
         flex-wrap: wrap;
+        gap: 10px !important;
     }
 
     .box{
         width: 35%;
+    }
+
+    select{
+        width: 80% !important;
     }
 }
