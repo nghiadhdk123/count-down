@@ -1,3 +1,8 @@
+:root {
+    --light-blue: #3768a2;
+    --yellow-color: #ffd404;
+}
+
 @font-face {
     font-family: Pacifico;
     src: url('/font-text/Pacifico-Regular.ttf');
@@ -5,6 +10,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 
       'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
       'Open Sans', 'Helvetica Neue', sans-serif;
@@ -14,6 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .heading {
     position: absolute;
@@ -22,6 +29,7 @@ body {
     width: 100%;
 }
 .heading h1 {
+    margin-bottom: 0;
     color: white;
     font-size: 60px;
     text-shadow: 1px 1px 2px white, 0 0 1em blue, 0 0 0.2em blue;
@@ -35,24 +43,32 @@ body {
 
 #clickme{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 15px;
 }
 
-.box {
-    width: 15%;
-    height: 150px;
+.box{
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: rgb(251, 252, 252) 0px 20px 30px -10px;
+    flex-direction: column;
+    margin: 0 5%;
+    font-size: 15px;
     font-family: Pacifico;
-    
+    color: white;
+}
+
+#clickme .box:nth-child(1) {
+    margin: 0 !important;
+    width: 100%;
+    color: var(--yellow-color);
+    font-weight: bold;
+    font-size: 40px !important;
+    margin-bottom: 25px !important;
+}
+
+#days{
+    font-size: 40px;
 }
 
 .number-count-down {
@@ -60,22 +76,34 @@ body {
     font-weight: bold;
 }
 
-#selectpicker {
-    margin-top: 5%;
+#particles-js {
+    background: #0d112c;
+    height: 100vh;
 }
 
-select {
-    height: 40px;
-    border-radius: 15px;
-}
-
-select option {
+.info-day {
+    color:white;
+    font-size: 20px;
+    font-style: italic;
     font-family: Pacifico;
 }
 
-#particles-js {
-    background: black;
-    height: 100vh;
+.text-to-day {
+    /* color: var(--light-blue); */
+    color: white;
+    text-shadow: 1px 1px 2px white, 0 0 1em blue, 0 0 0.2em blue;
+    font-weight: bold;
+}
+
+.now-day {
+    color: var(--yellow-color);
+}
+
+.info-day-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 @media only  screen and (min-width:0px) and (max-width:576px) {
@@ -100,7 +128,20 @@ select option {
         width: 35%;
     }
 
-    select{
-        width: 80% !important;
+    #clickme .box:nth-child(1) {
+        margin: 0 !important;
+        width: 100%;
+        color: var(--yellow-color);
+        font-weight: bold;
+        font-size: 40px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .info-day {
+        font-size: 15px !important;
+    }
+
+    .info-day-footer {
+        font-size: 10px !important;
     }
 }
