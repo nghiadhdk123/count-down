@@ -117,3 +117,21 @@ function countDown() {
 //     /* Read more about handling dismissals below */
 //     })
 // }
+
+$(document).ready(function () {
+    $("#button-play").on('click', function() {
+        $("#container").css({
+            "top": "0%",
+            "opacity": "1"
+        });
+        music.play();
+    })
+
+    $("#button-pause").on('click', function() {
+        $("#container").css({
+            "top": "100%",
+            "opacity": "0"
+        });
+        music.pause();
+    })
+});

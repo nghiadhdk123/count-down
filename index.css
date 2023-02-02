@@ -77,8 +77,10 @@ body {
 }
 
 #particles-js {
+    position: relative;
     background: #0d112c;
     height: 100vh;
+    overflow: hidden;
 }
 
 .info-day {
@@ -89,7 +91,6 @@ body {
 }
 
 .text-to-day {
-    /* color: var(--light-blue); */
     color: white;
     text-shadow: 1px 1px 2px white, 0 0 1em blue, 0 0 0.2em blue;
     font-weight: bold;
@@ -105,6 +106,88 @@ body {
     width: 100%;
     text-align: center;
 }
+
+#container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    opacity: 0;
+}
+
+#box{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 3%;
+    box-shadow: 1px 1px 2px white, 0 0 1em blue, 0 0 0.2em blue;
+    outline: none;
+    border-color: transparent;
+    transition: 0.5s;
+}
+
+button:hover{
+    box-shadow: 1px 1px 10px white, 0 0 1em blue, 0 0 1em blue;
+}
+
+#button-pause {
+    position: absolute;
+    top: 0;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    100% {
+        transform:  perspective(1000px) rotateY(360deg);
+    }
+}
+
+#box .wrapper-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) *45deg)) translateZ(400px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #ffffff4d);
+}
+
+#box .wrapper-img .image{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* .image:hover{
+    width: 300px !important;
+    height: 300px !important;
+} */
 
 @media only  screen and (min-width:0px) and (max-width:576px) {
     #wrapper {
@@ -143,5 +226,20 @@ body {
 
     .info-day-footer {
         font-size: 10px !important;
+    }
+
+    #box{
+        width: 100px;
+        height: 100px;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: perspective(5000px) rotateY(0deg);
+        }
+    
+        100% {
+            transform:  perspective(5000px) rotateY(360deg);
+        }
     }
 }

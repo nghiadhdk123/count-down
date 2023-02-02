@@ -7,6 +7,8 @@
     <meta name="referrer" content="no-referrer">
     <title>Đếm ngược ngày tết</title>
     <link rel="shortcut icon" href="/public/icon.png">
+    <link rel="stylesheet" href="/public/css/lightbox2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/index.css">
 </head>
 <body>
@@ -21,18 +23,69 @@
                     <div class="box"><span id="minutes" class="number-count-down"></span> Phút</div>
                     <div class="box"><span id="seconds" class="number-count-down"></span> Giây</div>
                 </div>
+                <button id="button-play">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
             </div>
             <p class="info-day info-day-footer"><span class="text-to-day">Ngày Diễn Ra</span> : Thứ 7, <span class="now-day">10/2/2024</span> <span>(Dương Lịch)</span> | <span class="now-day">1/1/2024</span> <span>(Âm Lịch)</span> </p>
 		</div>
+
+        <div id="container">
+            <div id="box">
+                <span class="wrapper-img" style="--i:1">
+                    <a href="/public/img1.jpg" data-lightbox="image1" data-title="Tất niêm 2023">
+                        <img src="/public/img1.jpg" alt="" class="image">
+                    </a>
+                </span>
+                <span class="wrapper-img" style="--i:2">
+                    <a href="/public/img2.jpg" data-lightbox="image2" data-title="Tết năm 2007">
+                        <img src="/public/img2.jpg" alt="" class="image">
+                    </a>
+                </span>
+                <span class="wrapper-img" style="--i:3">
+                    <a href="/public/img3.jpg" data-lightbox="image3" data-title="Tết năm 2022">
+                        <img src="/public/img3.jpg" alt="" class="image">
+                    </a>
+                </span>
+                <span class="wrapper-img" style="--i:4">
+                    <a href="/public/img4.jpg" data-lightbox="image4" data-title="Tết năm 2020">
+                        <img src="/public/img4.jpg" alt="" class="image">
+                    </a>
+                </span>
+                <span class="wrapper-img" style="--i:5">
+                    <a href="/public/img5.jpg" data-lightbox="image5" data-title="Tết năm 2021">
+                        <img src="/public/img5.jpg" alt="" class="image">
+                    </a>
+                </span>
+                <span class="wrapper-img" style="--i:6">
+                    <a href="/public/img6.jpg" data-lightbox="image6" data-title="Biệt đội hủy diệt Công Viên Nước Hồ Tây">
+                        <img src="/public/img6.jpg" alt="" class="image">
+                    </a>
+                </span>
+                <span class="wrapper-img" style="--i:7">
+                    <a href="/public/img7.jpg" data-lightbox="image7" data-title="Giáng sinh năm 2022">
+                        <img src="/public/img7.jpg" alt="" class="image">
+                    </a>
+                </span>
+                <span class="wrapper-img" style="--i:8">
+                    <a href="/public/img8.jpg" data-lightbox="image8" data-title="Tết năm 2022">
+                        <img src="/public/img8.jpg" alt="" class="image">
+                    </a>
+                </span>
+            </div>
+
+            <button id="button-pause">
+                <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+        </div>
 	</div>
 
 	<!-- Import Particles.js and app.js files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="particles.js-master/particles.js">
-	</script>
-	<script src="/particles.js-master/demo/js/app.js">
-	</script>
+    <script src="/public/js/jquey.min.js"></script>
+	<script src="particles.js-master/particles.js"></script>
+	<script src="/particles.js-master/demo/js/app.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/public/js/lightbox2.min.js"></script>
     <script src="/index.js"></script>
 </body>
 </html>
