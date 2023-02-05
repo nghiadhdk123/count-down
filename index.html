@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="/public/icon.png">
     <link rel="stylesheet" href="/public/css/lightbox2.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/index.css">
 </head>
 <body>
@@ -74,18 +76,97 @@
                 </span>
             </div>
 
+            <!-- Slick -->
+            <div id="slick-image">
+                <div>
+                    <a href="/public/img1.jpg" data-lightbox="image1" data-title="Tất niêm 2023">
+                        <img src="/public/img1.jpg" alt="" class="imageSlick">
+                    </a>
+                </div>
+                <div>
+                    <a href="/public/img2.jpg" data-lightbox="image2" data-title="Tết năm 2007">
+                        <img src="/public/img2.jpg" alt="" class="imageSlick">
+                    </a>
+                </div>
+                <div>
+                    <a href="/public/img3.jpg" data-lightbox="image3" data-title="Tết năm 2022">
+                        <img src="/public/img3.jpg" alt="" class="imageSlick">
+                    </a>
+                </div>
+                <div>
+                    <a href="/public/img4.jpg" data-lightbox="image4" data-title="Tết năm 2020">
+                        <img src="/public/img4.jpg" alt="" class="imageSlick">
+                    </a>
+                </div>
+                <div>
+                    <a href="/public/img5.jpg" data-lightbox="image5" data-title="Tết năm 2021">
+                        <img src="/public/img5.jpg" alt="" class="imageSlick">
+                    </a>
+                </div>
+                <div>
+                    <a href="/public/img6.jpg" data-lightbox="image6" data-title="Biệt đội hủy diệt Công Viên Nước Hồ Tây">
+                        <img src="/public/img6.jpg" alt="" class="imageSlick">
+                    </a>
+                </div>
+                <div>
+                    <a href="/public/img7.jpg" data-lightbox="image7" data-title="Giáng sinh năm 2022">
+                        <img src="/public/img7.jpg" alt="" class="imageSlick">
+                    </a>
+                </div>
+                <div>
+                    <a href="/public/img8.jpg" data-lightbox="image8" data-title="Tết năm 2022">
+                        <img src="/public/img8.jpg" alt="" class="imageSlick">
+                    </a>
+                </div>
+            </div>
             <button id="button-pause">
                 <i class="fa fa-pause" aria-hidden="true"></i>
             </button>
         </div>
 	</div>
-
 	<!-- Import Particles.js and app.js files -->
     <script src="/public/js/jquey.min.js"></script>
 	<script src="particles.js-master/particles.js"></script>
 	<script src="/particles.js-master/demo/js/app.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/public/js/lightbox2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/index.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#slick-image').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                centerMode: true,
+                centerPadding: '60px',
+                fade: true,
+                cssEase: 'linear',
+                infinite: true,
+                speed: 1000,
+                responsive: [
+                    {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                    }
+                ],
+            });
+        });
+    </script>
 </body>
 </html>

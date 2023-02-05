@@ -1,6 +1,10 @@
 var timeNow = new Date();
 var countDate = new Date('feb 10, 2024 00:00:00').getTime();
 let music = new Audio;
+
+// let width = window.screen.availWidth;
+// let height = window.screen.width;
+
 music.src = "/public/y2mate.com - Dan Gibson  A Breath of Spring.mp3"
 music.loop = true;
 
@@ -34,7 +38,7 @@ function getDay() {
 
     text = "Thứ " + day;
     textDate = date + "/" + month + "/" + year;
-    if(day == 7) {
+    if(day == 1) {
         text = "Chủ nhật";
     }
     today.innerHTML = text;
@@ -124,7 +128,7 @@ $(document).ready(function () {
             "top": "0%",
             "opacity": "1"
         });
-        music.play();
+        // music.play();
     })
 
     $("#button-pause").on('click', function() {
@@ -132,6 +136,6 @@ $(document).ready(function () {
             "top": "100%",
             "opacity": "0"
         });
-        music.pause();
+        // music.pause();
     })
 });
