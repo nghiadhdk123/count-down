@@ -11,24 +11,27 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 
-      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-      'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
     overflow: hidden;
 }
-#wrapper{
+
+#wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
 }
+
 .heading {
     position: absolute;
     text-align: center;
     height: 100%;
     width: 100%;
 }
+
 .heading h1 {
     margin-bottom: 0;
     color: white;
@@ -37,12 +40,13 @@ body {
     font-style: italic;
     font-family: Pacifico;
 }
+
 .heading h3 {
     color: wheat;
     font-size: 20px;
 }
 
-#clickme{
+#clickme {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -50,7 +54,7 @@ body {
     align-items: center;
 }
 
-.box{
+.box {
     display: flex;
     flex-direction: column;
     margin: 0 5%;
@@ -68,7 +72,7 @@ body {
     margin-bottom: 25px !important;
 }
 
-#days{
+#days {
     font-size: 40px;
 }
 
@@ -85,7 +89,7 @@ body {
 }
 
 .info-day {
-    color:white;
+    color: white;
     font-size: 20px;
     font-style: italic;
     font-family: Pacifico;
@@ -101,7 +105,7 @@ body {
     color: var(--yellow-color);
 }
 
-.info-day-footer{
+.info-day-footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -113,23 +117,15 @@ body {
     height: 100%;
     background-color: black;
     position: absolute;
-    /* top: 100%; */
-    top: 0%;
+    top: 100%;
     left: 0;
     z-index: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 1s;
-    /* opacity: 0; */
-}
-
-#box{
-    position: relative;
-    width: 200px;
-    height: 200px;
-    transform-style: preserve-3d;
-    animation: animate 20s linear infinite;
+    opacity: 1;
+    overflow: hidden;
 }
 
 button {
@@ -149,7 +145,7 @@ button {
     transition: 0.5s;
 }
 
-button:hover{
+button:hover {
     box-shadow: 1px 1px 10px white, 0 0 1em blue, 0 0 1em blue;
 }
 
@@ -158,119 +154,76 @@ button:hover{
     top: 0;
 }
 
-#slick-image{
-    overflow: hidden;
+.swiper {
     width: 100%;
-    height: 300px;
-    display: none;
-    visibility: hidden;
-    opacity: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-.imageSlick{
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide a img {
+    display: block;
     width: 100%;
     height: 300px;
     object-fit: cover;
-    border-radius: 5px;
-    object-fit: cover;
 }
 
-@keyframes animate {
-    0% {
-        transform: perspective(1000px) rotateY(0deg);
-    }
-
-    100% {
-        transform:  perspective(1000px) rotateY(360deg);
-    }
-}
-
-#box .wrapper-img{
-    width: 100%;
-    height: 100%;
+.meteor {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    transform: rotateY(calc(var(--i) *45deg)) translateZ(400px);
-    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #ffffff4d);
+	top: 0%;
+	left: 0;
+	width: 4px;
+	height: 4px;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+				0 0 0 8px rgba(255,255,255,0.1),
+				0 0 20px rgba(255,255,255,1);
+	animation: star 5s linear infinite;
+	z-index: 0;
+	transform: rotate(-90deg);
 }
 
-.image{
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    object-fit: cover;
+.meteor::before {
+    content: '';
+	position: absolute;
+	top: 50%;
+    left: 50%;
+	width: 300px;
+	height: 1px;
+	background: linear-gradient(90deg,#fff,transparent);
+	z-index: 0;
+    transform: translate(50% -50%);
 }
 
-/* .image:hover{
-    width: 300px !important;
-    height: 300px !important;
-} */
+@keyframes star{
+	0%{
+		transform: translateY(0) rotate(-90deg);
+		opacity: 1;
+	}
 
-@media only screen and (min-width:0px) and (max-width:576px) {
-    #wrapper {
-        flex-direction: column-reverse;
-    }
+	70%{
+		opacity: 1;
+	}
 
-    #selectpicker {
-        margin-bottom: 5%;
-    }
+	100%{
+		transform: translateY(1000px) rotate(-90deg);
+		opacity: 0;
+	}
+}
 
-    .heading h1 {
-        font-size: 30px;
-    }
-
-    #clickme {
-        flex-wrap: wrap;
-        gap: 10px !important;
-    }
-
-    .box{
-        width: 35%;
-    }
-
-    #clickme .box:nth-child(1) {
+@media only screen and (min-width:0px) and (max-width:576px)  {
+    .swiper-slide a img {
+        display: block;
         margin: 0 !important;
         width: 100%;
-        color: var(--yellow-color);
-        font-weight: bold;
-        font-size: 40px !important;
-        margin-bottom: 0 !important;
-    }
-
-    .info-day {
-        font-size: 15px !important;
-    }
-
-    .info-day-footer {
-        font-size: 10px !important;
-    }
-
-    #box{
-        width: 100px;
-        height: 100px;
-        display: none;
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    @keyframes animate {
-        0% {
-            transform: perspective(5000px) rotateY(0deg);
-        }
-    
-        100% {
-            transform:  perspective(5000px) rotateY(360deg);
-        }
-    }
-
-    #slick-image{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        visibility: unset;
-        opacity: 1;
+        height: 300px;
+        object-fit: cover;
     }
 }
