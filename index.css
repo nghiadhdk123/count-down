@@ -226,4 +226,33 @@ button:hover {
         height: 300px;
         object-fit: cover;
     }
+
+    .info-day {
+        font-size: 15px !important;
+    }
+
+    .info-day-footer {
+        font-size: 10px !important;
+    }
+
+    #wrapper {
+        flex-direction: column-reverse;
+    }
+
+    #selectpicker {
+        margin-bottom: 5%;
+    }
+
+    .heading h1 {
+        font-size: 30px;
+    }
+
+    #clickme {
+        flex-wrap: wrap;
+        gap: 10px !important;
+    }
+
+    .box{
+        width: 35%;
+    }
 }
