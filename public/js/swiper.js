@@ -1,5 +1,5 @@
 var swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
+    spaceBetween: 24,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "auto",
@@ -7,12 +7,19 @@ var swiper = new Swiper(".mySwiper", {
     autoplay: {
         delay: 1500,
         disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
       },
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
+      480: {
+        slidesPerView: 1,
+      },
+      640: {
+        slidesPerView: 3,
+      },
+      1000: {
+        slidesPerView: 5,
+      }
     },
   });

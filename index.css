@@ -115,7 +115,7 @@ body {
 #container {
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: #222833;
     position: absolute;
     top: 100%;
     left: 0;
@@ -124,8 +124,32 @@ body {
     justify-content: center;
     align-items: center;
     transition: 1s;
-    opacity: 1;
+    opacity: 0;
     overflow: hidden;
+}
+
+.bg-container {
+    width: 100%;
+    height: 280px;
+    max-height: 280px;
+    background-image: url('/public/images/bg.png');
+    background-size: 1500px;
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    animation: moveBackground 25s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position-x: 0px;
+    }
+
+    100% {
+        background-position-x: 1500px;
+    }
 }
 
 button {
@@ -156,8 +180,8 @@ button:hover {
 
 .swiper {
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 0 20px;
+    z-index: 3;
 }
 
 .swiper-slide {
@@ -172,6 +196,7 @@ button:hover {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .meteor {
@@ -209,7 +234,7 @@ button:hover {
 	}
 
 	70%{
-		opacity: 1;
+		opacity: 0.3;
 	}
 
 	100%{

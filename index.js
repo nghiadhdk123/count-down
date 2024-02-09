@@ -1,10 +1,9 @@
 var timeNow = new Date();
-var countDate = new Date('feb 10, 2024 00:00:00').getTime();
+var countDate = new Date('jan 29, 2025 00:00:00').getTime();
 let music = new Audio;
 
 music.src = "/public/y2mate.com - Dan Gibson  A Breath of Spring.mp3"
 music.loop = true;
-
 // Hàm tạo sao băng
 function creartMeteor() {
     let container = document.querySelector('#container'); 
@@ -18,7 +17,7 @@ function creartMeteor() {
 
     setTimeout(function () { 
         container.removeChild(meteor)
-    },10000);
+    },5000);
 }
 
 
@@ -91,7 +90,7 @@ $(document).ready(function () {
         music.play();
         setInterval(function() {
             creartMeteor()
-        },1000);
+        },500);
     })
 
     $("#button-pause").on('click', function() {
