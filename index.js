@@ -6,7 +6,7 @@ music.src = "/public/y2mate.com - Dan Gibson  A Breath of Spring.mp3"
 music.loop = true;
 // Hàm tạo sao băng
 function creartMeteor() {
-    let container = document.querySelector('#container'); 
+    let container = document.querySelector('#container');
     let widthContainer = container.offsetWidth;
     let meteor = document.createElement('span');
     let randomLeft = Math.floor(Math.random() * widthContainer);
@@ -15,28 +15,12 @@ function creartMeteor() {
     container.appendChild(meteor);
 
 
-    setTimeout(function () { 
+    setTimeout(function () {
         container.removeChild(meteor)
-    },5000);
+    }, 5000);
 }
 
-
-
-setInterval(countDown , 1000);
-
-function playAudio() {
-    Swal.fire({
-        title: 'Bạn có muốn thưởng thức âm nhạc không!',
-        showDenyButton: true,
-        confirmButtonText: 'Đồng ý',
-        denyButtonText: 'Không muốn nghe',
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            music.play();
-        }
-      })
-}
+setInterval(countDown, 1000);
 
 getDay();
 function getDay() {
@@ -47,12 +31,12 @@ function getDay() {
     let dateNow = document.getElementById('date-to-day');
     let newOld = new Date();
     let date = newOld.getDate();
-    let month = newOld.getMonth()+1;
+    let month = newOld.getMonth() + 1;
     let year = newOld.getFullYear();
 
     text = "Thứ " + day;
     textDate = date + "/" + month + "/" + year;
-    if(day == 1) {
+    if (day == 1) {
         text = "Chủ nhật";
     }
     today.innerHTML = text;
@@ -82,25 +66,37 @@ function countDown() {
 }
 
 $(document).ready(function () {
-    $("#button-play").on('click', function() {
+
+    let myInterval;
+
+    $("#button-play").on('click', function () {
         $("#container").css({
             "top": "0%",
             "opacity": "1"
         });
-        music.play();
-        setInterval(function() {
+        myInterval = setInterval(function () {
             creartMeteor()
-        },500);
+        }, 500);
+
     })
 
-    $("#button-pause").on('click', function() {
+    $("#button-pause").on('click', function () {
         $("#container").css({
             "top": "100%",
             "opacity": "0"
         });
-        music.pause();
-        clearInterval(function() {
-            creartMeteor()
-        },1000);
+        
+        clearInterval(myInterval);
+    })
+
+    $("#button-music").on('click', function() {
+        let childrenIcon = $(this).children('i');
+        if(childrenIcon.hasClass('fa-play')) {
+            childrenIcon.removeClass('fa-play').addClass('fa-pause');
+            music.play();
+        }else {
+            childrenIcon.removeClass('fa-pause').addClass('fa-play');
+            music.pause();
+        }
     })
 });

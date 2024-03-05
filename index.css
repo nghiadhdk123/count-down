@@ -175,7 +175,19 @@ button:hover {
 
 #button-pause {
     position: absolute;
-    top: 0;
+    top: 10%;
+}
+
+#button-music {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 10%;
+    right: 1%;
+}
+
+.icon-music {
+    font-size: 18px;
 }
 
 .swiper {
@@ -201,44 +213,51 @@ button:hover {
 
 .meteor {
     position: absolute;
-	top: 0%;
+	top: 0;
 	left: 0;
-	width: 4px;
-	height: 4px;
-	background: #fff;
-	border-radius: 50%;
+	/* width: 4px;
+	height: 4px; */
+	/* background: #fff; */
+	/* border-radius: 50%;
 	box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
 				0 0 0 8px rgba(255,255,255,0.1),
-				0 0 20px rgba(255,255,255,1);
+				0 0 20px rgba(255,255,255,1); */
 	animation: star 5s linear infinite;
-	z-index: 0;
+	z-index: 1;
 	transform: rotate(-90deg);
 }
 
 .meteor::before {
-    content: '';
-	position: absolute;
+    content: "\f005";
+    font: normal normal normal 14px/1 FontAwesome;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 0 0 5px #fff
+                0 0 20px #fff
+                0 0 50px #fff;
+	/* position: absolute;
 	top: 50%;
     left: 50%;
 	width: 300px;
 	height: 1px;
 	background: linear-gradient(90deg,#fff,transparent);
+    /* transform: translate(50% -50%); */
 	z-index: 0;
-    transform: translate(50% -50%);
 }
 
 @keyframes star{
 	0%{
-		transform: translateY(0) rotate(-90deg);
+		transform: translateY(0) rotate(0deg);
 		opacity: 1;
 	}
 
 	70%{
-		opacity: 0.3;
+		opacity: 0.3 rotate(180deg);
 	}
 
 	100%{
-		transform: translateY(1000px) rotate(-90deg);
+		transform: translateY(1000px) rotate(360deg);
 		opacity: 0;
 	}
 }
